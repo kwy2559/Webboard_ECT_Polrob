@@ -6,16 +6,27 @@
     <title>Verify</title>
 </head>
 <body>
-    <form>
-    <table style="border: 2px solid black; width: 40%;" align="center">   
+     
     <h1 style="text-align: center;">Webboard Polrob</h1>
-    <hr>
+    <hr><br>
     <div style="text-align: center;">
-    เข้าสู่ระบบด้วย<br>
-    Login =<?php echo $_POST['login']?><br>
-    Password =<?php echo $_POST['pwd']?><br>
+
+   
+    <?php
+     $login =$_POST['login']; 
+     $pwd = $_POST['pwd']; 
+        if($login == "admin" && $pwd == "ad1234"){
+            echo "ยินดีต้อนรับคุณ ADMIN";
+        }
+        else if($login == "member" && $pwd == "mem1234"){
+            echo "ยินดีต้อนรับคุณ MEMBER";
+        }
+        else{
+            echo "ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง";
+        }
+        echo "<a href=index.php><br>กลับไปยังหน้าหลัก</a>";
+    ?>
 </div>
-</table>
-    </form>    
+   
 </body>
 </html>
