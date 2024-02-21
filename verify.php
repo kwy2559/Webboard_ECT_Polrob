@@ -14,8 +14,7 @@
 </head>
 <body>
      
-    <h1 style="text-align: center;">Webboard Polrob</h1>
-    <hr><br>
+    
     <div style="text-align: center;">
 
    
@@ -26,20 +25,27 @@
             $_SESSION["username"]="admin";
             $_SESSION["role"]="a";
             $_SESSION["id"]=session_id();
-            echo "ยินดีต้อนรับคุณ ADMIN";
+            header("location:index.php");
+            die();
+           // echo "ยินดีต้อนรับคุณ ADMIN";
         }
         else if($login == "member" && $pwd == "mem1234"){
             $_SESSION["username"]="member";
             $_SESSION["role"]="m";
             $_SESSION["id"]=session_id();
-            echo "ยินดีต้อนรับคุณ MEMBER";
+            header("location:index.php");
+            die();
+           // echo "ยินดีต้อนรับคุณ MEMBER";
         }
         else{
-            echo "ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง";
+            $_SESSION['ERROR'] = 'error';
+            header("location:index.php");
+            die();
+          //  echo "ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง";
         }
-        echo "<a href=index.php><br>กลับไปยังหน้าหลัก</a>";
+       // echo "<a href=index.php><br>กลับไปยังหน้าหลัก</a>";
     ?>
-</div>
+
    
 </body>
 </html>
