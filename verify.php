@@ -38,8 +38,8 @@
            // echo "ยินดีต้อนรับคุณ MEMBER";
         }
         else{
-            $_SESSION['ERROR'] = 'error';
-            header("location:index.php");
+            $_SESSION['error'] = 'error';
+            header("location:login.php");
             die();
           //  echo "ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง";
         }
