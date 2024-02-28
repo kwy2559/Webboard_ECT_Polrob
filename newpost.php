@@ -17,13 +17,13 @@
 </head>
 <body>
 <div class="container">
-    <h1 style="text-align: center;">Webboard KaKKaK</h1>
+    <h1 style="text-align: center;" class="mt-3">Webboard KaKKaK</h1>
     <?php include "nav.php"?>
     <div class="row mt-4">
         <div class="col-lg-3 col-md-2 col-sm-1"></div>
         <div class="col-lg-6 col-md-8 col-sm-10">
             <div class="card border-info">
-                <div class="card-header bg-info text-while">ตั้งกระทู้ไหม่:</div>
+                <div class="card-header bg-info text-white">ตั้งกระทู้ไหม่:</div>
                 <div class="card-body">
                     <form action="newpost_save.php" method="post">
                         <div class="row">
@@ -33,13 +33,12 @@
                                     <?php
                                         $conn=new PDO("mysql:host=localhost;dbname=webbord;charset=utf8","root","");
                                         $sql="SELECT * FROM category";
-                                        foreach($con->query($sql) as $row){
+                                        foreach($conn->query($sql) as $row){
                                             echo "<option value=$row[id]>$row[name]</option>";
                                         }
                                         $conn=null;
                                     ?>
-                                    <option value="general">เรื่องทั่วไป</option>
-                                    <option value="study">เรื่องเรียน</option>
+                        
                                 </select>
                             </div>
                         </div>
@@ -58,8 +57,8 @@
                         <div class="row mt-3">
                             <div class="col-lg-12 d-flex justify-content-center">
                                 <button type="submit" class="btn btn-info btn-sm text-white me-2">
-                                    <i class="bi bi-caret-right-square"></i>บันทึกข้อความ</button>
-                                    <button type="reset" class="btn btn-danger btn-sm"><i class="bi bi-x-square"></i>ยกเลิก</button>
+                                    <i class="bi bi-caret-right-square"></i> บันทึกข้อความ</button>
+                                    <button type="reset" class="btn btn-danger btn-sm"><i class="bi bi-x-square"></i> ยกเลิก</button>
                             </div>
                         </div>
                     </form>

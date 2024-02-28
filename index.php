@@ -34,8 +34,6 @@
         }
         $conn=null;
     ?>
-    <li><a class="dropdown-item" href="#">เรื่องเรียน</a></li>
-    <li><a class="dropdown-item" href="#">เรื่องทั่วไป</a></li>
   </ul>
   </span>
   </div>

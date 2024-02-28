@@ -39,44 +39,44 @@
                     <div class="card-body">
                         <form action="register_save.php" method="post">
                             <div class="row">
-                                <label class="col-lg-3 col-form-label">ชื่อบัญชี:</label>
+                                <label for="user" class="col-lg-3 col-form-label">ชื่อบัญชี:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" name="login" class="form-control" required>
+                                    <input id="user" type="text" name="login" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
-                                <label class="col-lg-3 col-form-label">รหัสผ่าน:</label>
+                                <label for="p" class="col-lg-3 col-form-label">รหัสผ่าน:</label>
                                 <div class="col-lg-9">
-                                    <input type="password" name="pwd" class="form-control" required>
+                                    <input id="p" type="password" name="pwd" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
-                                <label class="col-lg-3 col-form-label">ชื่อ-นามสกุล:</label>
+                                <label  for="n" class="col-lg-3 col-form-label">ชื่อ-นามสกุล:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" name="name" class="form-control" required>
+                                    <input id="n" type="text" name="name" class="form-control" required>
                             </div>
                         </div>
                         <div class="row mt-3">
                         <label class="col-lg-3 form-label">เพศ:</label>
                         <div class="col-lg-9">
                             <div class="form-check">
-                                <input type="radio" name="gender" value="m" class="form-check-input" required>
-                                <label class="form-check-label">ชาย</label>
+                                <input id = "m" type="radio" name="gender" value="m" class="form-check-input" required>
+                                <label class="form-check-label"for = "m">ชาย</label>
                             </div>
                             <div class="form-check">
-                                <input type="radio" name="gender" value="f" class="form-check-input" required>
-                                <label class="form-check-label">หญิง</label>
+                                <input id="f" type="radio" name="gender" value="f" class="form-check-input" required>
+                                <label for="f" class="form-check-label">หญิง</label>
                             </div>
                             <div class="form-check">
-                                <input type="radio" name="gender" value="o" class="form-check-input" required>
-                                <label class="form-check-label">อื่นๆ</label>
+                                <input id="o" type="radio" name="gender" value="o" class="form-check-input" required>
+                                <label for="o" class="form-check-label">อื่นๆ</label>
                             </div>
                         </div>
                     </div>
                     <div class="row mt-3">
-                        <label class="col-lg-3 col-form-label">อีเมล:</label>
+                        <label for = "e"class="col-lg-3 col-form-label">อีเมล:</label>
                         <div class="col-lg-9">
-                            <input type="email" name="email" class="form-control" required>
+                            <input id = "e"type="email" name="email" class="form-control" required>
                         </div>
                     </div>
                     <div class="row mt-3">
