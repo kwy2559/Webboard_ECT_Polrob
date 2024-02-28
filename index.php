@@ -23,8 +23,17 @@
   <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     --ทั้งหมด--
   </button>
-  <ul class="dropdown-menu">
+  <ul class="dropdown-menu" aria-labelledby="Button2">
     <li><a class="dropdown-item" href="#">ทั้งหมด</a></li>
+    <?php 
+        $conn=new PDO("mysql:host=localhost;dbname=webbord;
+        charset=utf8","root","");
+        $sql="SELECT * FROM category";
+        foreach($conn->query($sql) as $row){
+          echo "<li><a class=dropdown-item href=#>$row[name]</a></li>";
+        }
+        $conn=null;
+    ?>
     <li><a class="dropdown-item" href="#">เรื่องเรียน</a></li>
     <li><a class="dropdown-item" href="#">เรื่องทั่วไป</a></li>
   </ul>
@@ -37,14 +46,16 @@
 
   <table class="table table-striped mt-4">
   <?php 
-        for($i=1;$i<=10;$i++){
-            echo"<tr><td class='d-flex justify-content-between'><a href=post.php?id=$i style=text-decoration:none>กระทู้ที่ $i</a>";
-            if(isset($_SESSION['id']) && $_SESSION['role']=='a'){
-                echo "&nbsp;&nbsp;<a href=delete.php?id=$i 
-                class = 'btn btn-danger btn-sm'><i class='bi bi-trash'></i></a>";
-            }
-            echo "</td></tr>";
+        $conn=new PDO("mysql:host=localhost;dbname=webbord;charset=utf8","root","");
+        $sql="SELECT t3.name,t1.title,t1.id,t2.login,t1.post_date FROM post as t1
+        INNER JOIN user as t2 ON (t1.user_id=t2.id)
+        INNER JOIN category as t3 ON (t1.cat_id=t3.id) ORDER BY t1.post_date DESC";
+        $result=$conn->query($sql);
+        while($row = $result->fetch()){
+          echo "<tr><td>[$row[0]] <a href=post.php?id=$row[2]
+          style=text-decoration:none>$row[1]</a><br>$row[3] - $row[4]</td></tr>";
         }
+        $conn=null;
         ?>
   </table>  
     </div>
