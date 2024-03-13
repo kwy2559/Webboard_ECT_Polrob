@@ -16,6 +16,16 @@
     <title>Login</title>
 </head>
 <body>
+    <script>
+        function OnBlurPwd(){
+            let pwd=document.getElementById("pwd");
+            let pwd2=document.getElementById("pwd2");
+            if(pwd.value!==pwd2.value){
+                alert("รหัสผ่านทั้งสอองช่องไม่ตรงกัน");
+                pwd2.value="";
+            }
+        }
+    </script>
     <div class="container-lg">
         <h1 style="text-align: center;" class="mt-3">Webboard KaKKaK</h1>
         <?php include "nav.php"?>
@@ -47,7 +57,14 @@
                             <div class="row mt-3">
                                 <label for="p" class="col-lg-3 col-form-label">รหัสผ่าน:</label>
                                 <div class="col-lg-9">
-                                    <input id="p" type="password" name="pwd" class="form-control" required>
+                                    <input  type="password" name="pwd" id="pwd" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <label for="p" class="col-lg-3 col-form-label">ใส่รหัสผ่านซ้ำ:</label>
+                                <div class="col-lg-9">
+                                    <input  type="password" name="pwd2" id="pwd2" onblur="OnBlurPwd()" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
