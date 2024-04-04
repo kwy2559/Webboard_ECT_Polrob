@@ -7,9 +7,19 @@
       <div class="navbar-nav">
         <?php if(!isset($_SESSION['id'])){?>
         <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="login.php"><i class="bi bi-pencil-square"></i> เข้าสู่ระบบ</a>
-        </li>
-        <?php }else{?>
+        <a class="nav-link" aria-current="page" href="login.php"><i class="bi bi-pencil-square"></i> เข้าสู่ระบบ</a></li>
+       
+        <?php }elseif(isset($_SESSION['id']) &&  $_SESSION['role']=='a'){ ?>
+          <li class="nav-item dropdown">
+          <a class="btn btn-outline-secondary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-person-lines-fill"></i> <?php echo $_SESSION['username']; ?>
+          </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="category.php"><i class="bi bi-bookmarks"></i> จัดการหมวดหมูู่</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person-check"></i> จัดการผู้ใช้งาน</a></li>
+                        <li><a class="dropdown-item" href="logout.php"><i class="bi bi-power"></i> ออกจากระบบ</a></li>
+                        </ul>
+                    <?php  }else{?>
             <li class="nav-item dropdown">
           <a class="btn btn-outline-secondary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-person-lines-fill"></i> <?php echo $_SESSION['username']; ?>
